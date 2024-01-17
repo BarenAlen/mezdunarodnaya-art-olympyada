@@ -1,0 +1,18 @@
+﻿@mixin container($row: true) {
+    @if ($row) {
+        display: flex;
+    }
+    @else {
+        display: block;
+    }
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media screen and (min-width: 980px) {
+        max-width: 980px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

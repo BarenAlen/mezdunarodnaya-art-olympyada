@@ -1,0 +1,89 @@
+@import '../_variables.scss';
+@import '../_mixins/_all.scss';
+.slider {
+    margin-bottom: 36px;
+    
+    &_list {
+        list-style-type: none;
+        border-left: 3px solid #38afa9;
+        margin: 0;
+        padding-left: 0;
+
+        li {
+            display: block;
+            position: relative;
+        }
+    }
+
+    &_toggler {
+        display: block;
+        padding: 10px 0;
+        padding-left: 16px;
+        border: 1px solid #d9d7d7;
+        border-left: 0;
+        transition: .15s;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 4px;
+            left: 0px;
+            top: 0px;
+            bottom: 0px;
+            background: $primary-color;
+            opacity: 0;
+            transition: .15s;
+        }
+
+        &:hover {
+            border-color: $primary-color;
+            &::after,
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &.active {
+            border-color: $primary-color;
+            border-bottom-color: transparent;
+            &::after,
+            &::before {
+                opacity: 1;
+            }
+
+            &::after {
+                content: "Свернуть";
+            }
+        }
+    }
+
+    &_content {
+        display: none;
+        overflow: hidden;
+        border-right: 1px solid $primary-color;
+        border-bottom: 1px solid $primary-color;
+        color: #000;
+        letter-spacing: 1px;
+        line-height: 1.48;
+        padding: 0 36px 60px;
+    }
+
+    @media screen and (min-width: 768px) {
+        &_toggler {
+            &::after {
+                content: "Подробнее";
+                padding: 0 28px; // width: 100px;
+                height: 20px;
+                position: absolute;
+                bottom: 10px;
+                right: 40px;
+                background-color: #38afa9;
+                color: #fff;
+                text-align: center;
+                opacity: 0;
+                transition: .15s;
+            }
+        }
+    }
+}

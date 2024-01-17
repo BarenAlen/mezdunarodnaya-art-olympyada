@@ -1,0 +1,87 @@
+@import '../_variables.scss';
+@import '../_mixins/_all.scss';
+.mm-reviews {
+    margin-bottom: 30px;
+
+    &_container {
+        @include container();
+        flex-direction: column !important;
+    }
+}
+
+.mm-review {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+
+    &_body {
+        width: 70%;
+        border-bottom: 1px solid #c3e7e5;
+
+        h3 {
+            margin-bottom: 2px;
+            margin-top: 7px;
+            font-weight: 400;
+        }
+
+        p {
+            margin-top: 0;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+    }
+
+    &_date {
+        color: #38afa9;
+    }
+
+    &_title {
+        color: #949393;
+        margin-bottom: 6px;
+    }
+
+    &_addon {
+        position: relative;
+        width: 28%;
+    }
+
+    &_btn {
+        margin-top: auto;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #38afa9;
+        color: #fff;
+        border: 0;
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        cursor: pointer;
+        text-align: center;
+        font-size: 16px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) { 
+        flex-direction: column;
+        
+        &_body { 
+            width: 100%;
+        }
+
+        &_addon { 
+            width: 100%;
+            position: static;
+        }
+
+        &_btn {
+            position: static;
+        }
+    }
+
+}

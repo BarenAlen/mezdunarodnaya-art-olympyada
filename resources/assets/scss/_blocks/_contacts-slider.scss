@@ -1,0 +1,165 @@
+@import 'slick.scss';
+@import '../_mixins/_all.scss';
+.contacts-slider {
+	padding-bottom: 45px;
+
+	.page-title {
+		margin-bottom: 30px;
+	}
+
+	&_container {
+		@include container(false);
+		position: relative;
+	}
+
+	&_wrap {
+		max-width: 840px;
+		margin: 0 auto;
+	}
+
+	&_controls {
+		position: absolute;
+	    z-index: 4;
+		left: 50%;
+		transform: translateX(-50%);
+	    width: 320px;
+    	top: 294px;
+	}
+
+	&_prev,
+	&_next {
+		display: block;
+		width: 50px;
+		height: 50px;
+		background: $primary-color;
+		border: 0;
+		position: absolute;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			border-color: transparent;
+			border-style: solid;
+			border-left-color: #fff;
+			border-width: 8px;
+			border-left-width: 12px;
+			border-right-width: 12px;
+			left: calc(50% + 6px);
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&_next {
+		right: 0;
+	}
+
+	&_prev {
+		left: 0;
+		&::before {
+			left: calc(50% - 6px);
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
+	}
+
+	@media screen and (min-width: 560px) {
+		&_controls {
+        	width: 460px;
+			top: 284px;
+		}
+
+		&_prev,
+		&_next {
+			width: 60px;
+			height: 60px;
+		}
+    }
+}
+
+.contact {
+	text-align: center;
+
+	&_img {
+		overflow: hidden;
+		height: 250px;
+		transition: .3s;
+		margin-bottom: 50px;
+
+		img {
+			margin: 0 auto;
+		}
+	}
+
+	&_title {
+		opacity: 0;
+		font-size: 18px;
+		font-family: Georgia, serif;
+		transition: .3s;
+		margin-bottom: 2px;
+		padding-top: 54px;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 28px;
+			left: 50%;
+			transform: translateX(-50%);
+
+			width: 140px;
+			height: 2px;
+			background: $primary-color;
+		}
+	}
+
+	&_sub-title {
+		opacity: 0;
+		font-size: 14px;
+		font-style: italic;
+		color: $primary-color;
+		font-family: Georgia, serif;
+		transition: .3s;
+		margin-bottom: 20px;
+	}
+
+	&_email,
+	&_tel {
+		opacity: 0;
+		transition: .3s;
+		margin-bottom: 2px;
+	}
+}
+
+.slick-current {
+	.contact_title,
+	.contact_sub-title,
+	.contact_tel,
+	.contact_email {
+		opacity: 1;
+	}
+
+	.contact_img {
+		height: 300px;
+		margin-bottom: 0;
+	}
+}
+
+.contacts {
+	color: $primary-color;
+	// line-height: 1.36;
+	text-align: center;
+	margin-top: 30px;
+
+	@media screen and (min-width: 600px) {
+		text-align: left;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-top: -56px;
+
+		*:last-child {
+			text-align: right;
+		}
+	}
+}

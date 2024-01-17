@@ -1,0 +1,37 @@
+.app {
+
+	background: url("../img/download_bg.png") repeat;
+	background-position: center top;
+	margin-bottom: 40px;
+
+	&_container {
+		text-align: center;
+		@include container(false);
+		padding: 20px 0;
+	}
+
+	&_title {
+		font-size: 24px;
+		text-transform: uppercase;
+		color: #fff;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+
+	.btn:not(:last-child) {
+		margin-right: 20px;
+	}
+
+	@media screen and (min-width: 768px) {
+		&_container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: left;
+		}
+
+		&_title {
+			margin-bottom: 0;
+		}
+	}
+}

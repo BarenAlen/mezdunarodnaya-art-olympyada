@@ -1,0 +1,73 @@
+@import '../_variables.scss';
+@import '../_mixins/_all.scss';
+.demo {
+    margin-bottom: 40px;
+    text-align: center;
+
+    &_container {
+        @include container();
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    &_title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &_mhk, &_painting, &_music {
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+        padding-top: 112px;
+        flex-basis: 33%;
+        border-right: 2px solid #ebf7f6;
+
+      button {
+          margin-bottom: 0;
+      }
+    }
+
+    &_mhk {
+        background-image: url("../img/mhk_icon.png");
+
+      .demo_name {
+          color: #fb8587;
+      }
+    }
+
+    &_painting {
+        background-image: url("../img/painting_icon.png");
+
+      .demo_name {
+          color: #84a9c7;
+      }
+    }
+
+    &_music {
+        background-image: url("../img/music_icon.png");
+        border: 0;
+      
+      .demo_name {
+          color: #a5c6a4;
+      }
+    }
+
+    &_name {
+        margin-bottom: 18px;
+    }
+
+    &_description {
+        font-family: Georgia, serif;
+        font-style: italic;
+    }
+
+    @media screen and (max-width: 768px) {
+      &_mhk, &_painting, &_music { 
+          flex-basis: 100%;
+          border: 0;
+          margin-bottom: 20px;
+      }
+    }
+
+}

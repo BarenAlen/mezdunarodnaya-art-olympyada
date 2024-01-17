@@ -1,0 +1,92 @@
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
+input[type='tel'] {
+	font-family: 'PT Sans', sans-serif;
+}
+
+.input-text {
+	border: 0;
+	letter-spacing: .75px;
+	padding: 4.5px 20px;
+	font-size: 14px;
+}
+
+.btn-submit {
+	display: inline-block;
+	vertical-align: middle;
+	color: #076b66;
+	font-size: 14px;
+	text-align: center;
+	border: 0;
+	background: #b6ebe8;
+	font-family: 'PT Sans', sans-serif;
+	letter-spacing: .75px;
+	padding: 4.5px 40px;
+}
+
+.input-text::-webkit-input-placeholder {
+  color: #38afa9;
+}
+.input-text::-moz-placeholder {
+  color: #38afa9;
+}
+.input-text:-ms-input-placeholder {
+  color: #38afa9;
+}
+.input-text:-moz-placeholder {
+  color: #38afa9;
+}
+
+.form-group-inline {
+
+	.input-text,
+	.btn-submit {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	@media screen and (min-width: 768px) {
+		display: flex;
+		flex-direction: row;
+
+		.input-text,
+		.btn-submit {
+			width: auto;
+			margin-right: 20px;
+		}
+
+		.input-text {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+	}
+}
+
+.label {
+	display: inline-block;
+	vertical-align: middle;
+	color: #fff;
+	letter-spacing: .75px;
+	margin: 4px 0 14px;
+}
+
+.form-group {
+	margin-bottom: 10px;
+}
+
+.form-control {
+	width: 100%;
+}
+
+.form-note {
+	font-family: Georgia, serif;
+	font-style: italic;
+	color: #fff;
+	margin: 4px 0 14px;
+}
+
+@media screen and (min-width: 768px) {
+
+}

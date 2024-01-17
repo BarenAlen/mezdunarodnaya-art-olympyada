@@ -1,0 +1,52 @@
+﻿@import '../_variables.scss';
+@import '../_mixins/_all.scss';
+.page-header {
+    padding-bottom: 150px;
+    background-color: #fff;
+    background-image: url(../img/header-bg.png);
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    // margin-bottom: 40px;
+    a {
+        color: #fff;
+    }
+
+    &_container {
+        @include container();
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &_top {
+        background: $primary-color;
+        color: #fff;
+        padding: 7px 0;
+    }
+
+    &_title {
+        color: $primary-color;
+        background: #fff;
+        font-weight: 300;
+        margin: 0;
+        text-align: center;
+        padding: 0px 0 4px;
+        font-size: 24px;
+    }
+
+    &_login {
+        color: #fff;
+        display: block;
+    }
+
+    &_logo {
+        display: block;
+    }
+
+    @media screen and (min-width:980px) {
+        height: 200px;
+        padding-bottom: 0;
+        &_title {
+            font-size: 30px;
+        }
+    }
+}

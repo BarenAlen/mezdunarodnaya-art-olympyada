@@ -1,0 +1,60 @@
+@import '../_mixins/_all.scss';
+.partners-slider {
+    margin-bottom: 40px;
+
+    #partners-slider {
+        padding: 0 20px;
+    }
+
+    &_container {
+        @include container(false);
+    }
+
+    &_wrap {
+        position: relative;
+        padding-top: 10px;
+    }
+
+    &_item {
+        height: 65px;
+        line-height: 65px;
+        vertical-align: middle;
+        text-align: center;
+
+        img {
+            display: inline-block !important;
+            vertical-align: middle;
+            margin: 0 auto;
+        }
+    }
+  
+    &_prev,
+    &_next {
+        display: block;
+        position: absolute;
+        border: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url("../img/partners-slider-arrow.png") no-repeat;
+        background-size: 23px 42px;
+        width: 23px;
+        height: 42px;
+        z-index: 1000;
+        opacity: .4;
+        transition: .15s;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .9;
+        }
+    }
+
+    &_next {
+        right: 0;
+    }
+
+    &_prev {
+        left: 0;
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
